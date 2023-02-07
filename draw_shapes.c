@@ -15,8 +15,7 @@ void print_square(int leftCol, int size)
 }
 
 // Prints a triangle of specified height whose left edge is at col leftCol.
-void print_triangle(int leftCol, int size)
-{
+void print_triangle(int leftCol, int size){
   for (int row = 0; row <= size; row++) {
     int minCol = leftCol + size - row, maxCol = leftCol + size + row;
     int col;
@@ -26,3 +25,27 @@ void print_triangle(int leftCol, int size)
   }
 }
 
+//print arrow here
+void print_arrow(int triCol, int triSize)
+{
+  int triLastSize;
+  
+  for (int row = 0; row <= triSize; row++) {
+    int minCol = triCol + triSize - row, maxCol = triCol + triSize + row;
+    int col;
+    for (col = 0; col < minCol; col++) putchar(' ');
+    for (     ; col <= maxCol; col++) putchar('*');
+    putchar('\n');
+    triLastSize = maxCol / 2;
+  }
+  
+  
+  for (int i = 0; i <= triSize; i++) {
+    for (int x = 0; x <= triLastSize; x++) {
+      putchar(' ');
+    }
+
+    putchar('*');
+    putchar('\n');
+  }
+}
